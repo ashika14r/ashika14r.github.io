@@ -1,0 +1,26 @@
+body {
+    background-color:black;
+}
+h1 {
+    color: red;
+}
+
+.buttons {
+    background-color:dimgrey;
+}
+.home-link {
+    background-color:azure;
+    color:crimson;
+}
+.spn {
+    background-color:red;
+    color:white;
+}
+.wiki-link {
+    background-color:azure;
+    color:crimson;
+}
+.spnwiki-link {
+    background-color:azure;
+    color:crimson;
+}
