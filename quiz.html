@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Quiz</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>QUIZ</h1>
+            <div>Who is your favourite demon?</div>
+                <div class="radio">
+                <label>
+                    <input type="radio" name="q1" value="Sam">
+                    Ruby                   
+                </label>
+                </div>
+                <div class="radio">
+                <label>
+                    <input type="radio" name="q1" value="Castiel">
+                    Meg                  
+                </label>
+                </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="q1" value="Dean">
+                    Cain                    
+                </label>
+                </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="q1" value="Crowley">
+                    Crowley                    
+                </label>
+                </div>
+                <div>BOOM Q2</div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="q2" value="Dean">
+                    Answer 1                    
+                </label>
+                </div>
+                <div class="radio">
+                <label>
+                    <input type="radio" name="q2" value="Sam">
+                    Answer 2                   
+                </label>
+                </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="q2" value="Castiel">
+                    Answer 3                    
+                </label>
+                </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="q2" value="Crowley">
+                    Answer 4                    
+                </label>
+                </div>
+               
+            <div class="results">
+            <div>
+                <button class="btn btn-primary">See Results</button>
+                <div class="alert alert-info hidden" role="alert">
+                You got <strong id="character"></strong>
+                </div>
+            </div>
+        </div>
+        </div>
+        <script>
+            $(function() {
+                $('button').click(function() {
+                    var count = {
+                        Dean: 0,
+                        Sam: 0,
+                        Castiel: 0,
+                        Crowley: 0,
+                    };
+                   $(':checked').each(function(i, el) {
+                       var character = $(el).val();
+                       count[character]++;        
+                   });
+                    alert(JSON.stringify(count));
+               });
+            });
+        </script>
+    </body>
+</html>
