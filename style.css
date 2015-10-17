@@ -43,3 +43,14 @@ h1 {
     background-color:red;
     color:white;
 }
+.quiz {
+    background-color:red;
+    color:white;
+}
+.question {
+    color: white;
+}
+.q {
+    color: white;
+    background-color: dimgrey;
+}
