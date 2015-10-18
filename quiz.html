@@ -79,39 +79,79 @@
                 </label>
                 </div>
             <div class="q"><h3>Choice of weapon?</h3></div>
-            <div class="radio-inline question">
+            <div class="row">
+                <div class="col-md-3"><div class="radio-inline question">
                 <label>
                     <input type="radio" name="q3" value="Sam">
                     <img src="https://s-media-cache-ak0.pinimg.com/originals/68/b0/bd/68b0bd0dd41968e9871cc61d94153d26.jpg">
                 </label>
                 </div>
-                <div class="radio-inline question">
+                </div>
+                <div class="col-md-3"><div class="radio-inline question">
                 <label>
                     <input type="radio" name="q3" value="Crowley">
                     <img src="https://s-media-cache-ak0.pinimg.com/originals/75/4f/e9/754fe9bcbf7b7ee138ad57bd3932d991.jpg" >
                 </label>
                 </div>
-            <div class="radio-inline question">
+                </div>
+                <div class="col-md-3"><div class="radio-inline question">
                 <label>
                     <input type="radio" name="q3" value="Dean">
                     <img src="https://s-media-cache-ak0.pinimg.com/originals/6a/4f/8d/6a4f8d55c50fcb79ebe1896951fb9323.jpg">
                 </label>
                 </div>
-            <div class="radio-inline question">
+                </div>
+                <div class="col-md-3"><div class="radio-inline question">
                 <label>
                     <input type="radio" name="q3" value="Castiel"> 
                     <img src="https://s-media-cache-ak0.pinimg.com/originals/39/2f/02/392f025ceac39a22a3cab6095575ef21.jpg">
                 </label>
                 </div>
-               
+                </div>
+            </div> 
+            <div class="q"><h3>CHANGE?</h3></div>
+            <div class="row">
+                <div class="col-md-3"><div class="radio-inline question">
+                <label>
+                    <input type="radio" name="q4" value="Crowley">
+                    <img src="https://s-media-cache-ak0.pinimg.com/originals/92/f6/36/92f6366e91e3b9befb8e826cf59f7b70.jpg">
+                </label>
+                </div>
+                </div>
+                <div class="col-md-3"><div class="radio-inline question">
+                <label>
+                    <input type="radio" name="q4" value="Castiel">
+                    <img src="https://s-media-cache-ak0.pinimg.com/originals/40/9b/19/409b1965c4b748d2b8a9406eb0f9d637.jpg" >
+                </label>
+                </div>
+                </div>
+            <div class="col-md-3"><div class="radio-inline question">
+                <label>
+                    <input type="radio" name="q4" value="Sam">
+                    <img src="https://s-media-cache-ak0.pinimg.com/originals/59/4d/96/594d96dd127e9ee9446cca20379e8eb1.jpg">
+                </label>
+                </div>
+                </div>
+            <div class="col-md-3"><div class="radio-inline question">
+                <label>
+                    <input type="radio" name="q4" value="Dean"> 
+                    <img src="https://s-media-cache-ak0.pinimg.com/originals/4d/15/79/4d1579962602157d3a697d4f6e9ea982.jpg">
+                </label>
+                </div>
+                </div>   
             <div class="results">
             <div>
-                <button class="btn btn-primary">See Results</button>
-                <div class="alert alert-info hidden" role="alert">
-                You got <strong id="character"></strong>
+                <button class="btn btn-success">Results</button>
+                <div class="alert alert-success hidden" role="alert">
+                You got <strong id="result"></strong>
                 </div>
             </div>
         </div>
+            <div class="row">
+               <div class="col-md-12"><h1><p class="text-center spn">SPN</p></h1>
+                </div>
+            </div>
+            </div>
         </div>
         <script>
             $(function() {
@@ -126,7 +166,16 @@
                        var character = $(el).val();
                        count[character]++;        
                    });
-                    alert(JSON.stringify(count));
+                    var max = 0;
+                    var result = '';
+                    for (var key in count) {
+                        if (count[key] > max) {
+                            max = count[key];
+                            result = key;
+                        }
+                    }
+                    $('#result').text(result);
+                    $('.alert').removeClass('hidden');
                });
             });
         </script>
